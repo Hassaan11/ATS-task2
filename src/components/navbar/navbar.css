@@ -1,0 +1,52 @@
+.navIcon {
+  font-size: 25px;
+}
+.mynavbar {
+  background-color: #f9faff;
+}
+.mynavbar .title {
+  font-size: 20px;
+  color: #1d4ed8;
+}
+
+.mynavbar .text {
+  color: #0b0b0b;
+  font-size: 12px;
+}
+
+.circle {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.dropdown-btn {
+  background-color: white;
+  border-bottom: 1px solid #f8f8f8;
+  cursor: pointer;
+}
+
+.dropdown-btn:first-child {
+  border-radius: 10px 10px 0 0;
+}
+.dropdown-btn:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.key {
+  background-color: #f8f8f8;
+  padding: 8px;
+  border-radius: 10px;
+  color: #444444;
+}
+
+.videobtn :where(.css-dev-only-do-not-override-1ck3jst).ant-btn-default {
+  background-color: #1d5ecd;
+  border-color: #1d5ecd;
+  height: 40px;
+  color: white;
+}
