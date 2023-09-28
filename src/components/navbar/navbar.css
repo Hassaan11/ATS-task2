@@ -44,9 +44,10 @@
   color: #444444;
 }
 
-.videobtn :where(.css-dev-only-do-not-override-1ck3jst).ant-btn-default {
+.videobtn :where(.css-dev-only-do-not-override-1ck3jst).ant-btn-compact-item:not(.ant-btn-compact-last-item).ant-btn-compact-first-item, 
+.videobtn :where(.css-dev-only-do-not-override-1ck3jst).ant-btn-compact-item:not(.ant-btn-compact-first-item).ant-btn-compact-last-item{
   background-color: #1d5ecd;
-  border-color: #1d5ecd;
   height: 40px;
   color: white;
 }
+

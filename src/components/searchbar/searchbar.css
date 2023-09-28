@@ -1,0 +1,10 @@
+.inputdiv{
+  display: flex;
+  position: relative;
+}
+.infoIcon{
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  color: #B0BABF;
+}

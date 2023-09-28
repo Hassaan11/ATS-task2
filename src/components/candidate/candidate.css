@@ -1,0 +1,43 @@
+.candidateComponent{
+  padding: 20px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.candidateComponent:last-child {
+  border-bottom: none;
+}
+
+.candidateComponent .content{
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.candidateComponent .data{
+  margin-left: 20px;
+}
+
+.candidateComponent .data h4 {
+  font-size: 14px;
+  font-weight: bold;
+}
+.candidateComponent .data h6 {
+  font-size: 10px;
+  font-weight: 700;
+}
+.candidateComponent .data span {
+  font-size: 10px;
+}
+.candidateComponent .tag{
+  color: #1D4ED8;
+  font-size: 8px;
+  margin-right: 8px;  
+}
+
+.candidateComponent .skill{
+  background-color: #F3FAFC;
+  color: #037092;
+  font-size: 8px;
+  margin-right: 8px;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
