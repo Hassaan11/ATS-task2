@@ -64,11 +64,13 @@ const Home = () => {
       checked: false,
     },
   ]);
+  const [check, setCheck] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [filteredCandidates, setfilteredCandidates] =
     useState<CandidatesProps>(candidates);
 
   const onChange = (e: CheckboxChangeEvent) => {
+    setCheck(e.target.checked);
     const newData = candidates.map((candidate: CandidateProps) => ({
       ...candidate,
       checked: e.target.checked,
@@ -77,9 +79,11 @@ const Home = () => {
   };
 
   const onSearchChange = (e: any) => {
+    setCheck(false);
     let searchQuery = e.target.value;
     if (searchQuery) {
-      const result = candidates.filter((candidate) => {
+      console.log("inside", candidates);
+      const result = filteredCandidates.filter((candidate) => {
         const { name, location, degree, tags, skills } = candidate;
 
         return (
@@ -151,7 +155,11 @@ const Home = () => {
               <div className="col-md-8">
                 <div className="col2 p-3">
                   <div className="d-flex justify-content-between align-items-center header flex-wrap">
-                    <Checkbox onChange={onChange} className="candidatesText">
+                    <Checkbox
+                      checked={check}
+                      onChange={onChange}
+                      className="candidatesText"
+                    >
                       <span style={{ marginLeft: "20px" }}>
                         {candidates.length} Candidates
                       </span>
