@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import { useState } from "react";
 import type { MenuProps } from "antd";
 import { Button, Dropdown, Space } from "antd";
 import {
@@ -57,36 +57,40 @@ const Navbar = () => {
     },
   ];
   const handleMenuClick: MenuProps["onClick"] = (e: any) => {
-    // if (e.key) setQuestion({ ...question, type: e?.domEvent.target.innerText });
+    console.log(e);
   };
 
   const menuProps = {
     items,
     onClick: handleMenuClick,
   };
-  const menuProps2 = {
-    items,
-    onClick: handleMenuClick,
-  };
+
+  const items2: MenuProps["items"] = [
+    {
+      label: "Submit and continue",
+      key: "1",
+    },
+  ];
 
   return (
-    <div className="d-flex justify-content-between align-items-center p-3 mynavbar">
-      <div className="d-flex flex-column">
+    <div className="d-flex justify-content-between align-items-center flex-wrap p-4 mynavbar">
+      <div className="d-flex flex-column mb-2">
         <h3 className="title">London Internship Program</h3>
         <span className="text">London</span>
       </div>
       <div>
         <Dropdown
-          className="mt-1 w-100 dropdown"
-          visible={visible}
+          className="mt-1 w-100 dropdown mb-2"
+          open={visible}
           menu={menuProps}
           trigger={["click"]}
           onOpenChange={() => setVisible(!visible)}
           dropdownRender={(menus: any) => {
             return (
               <>
-                {menus?.props?.items?.map((m: any) => (
+                {menus?.props?.items?.map((m: any, index: number) => (
                   <div
+                    key={index}
                     className="p-2 d-flex justify-content-between w-100 align-items-center dropdown-btn"
                     onClick={() => {
                       setVisible(false);
@@ -118,7 +122,7 @@ const Navbar = () => {
           </Button>
         </Dropdown>
       </div>
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-center flex-wrap">
         <div className="circle">
           <ShareAltOutlined className="navIcon" />
         </div>
@@ -137,9 +141,9 @@ const Navbar = () => {
         <div className="circle">
           <MessageOutlined className="navIcon" />
         </div>
-        <div className="videobtn">
+        <div className="videobtn mt-1">
           <Dropdown.Button
-            menu={menuProps}
+            menu={{ items: items2 }}
             icon={<DownOutlined />}
             trigger={["click"]}
             onClick={() => console.log("abc")}
