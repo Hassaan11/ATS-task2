@@ -23,3 +23,10 @@
   font-size: 20px;
   margin-bottom: 30px;
 }
+
+.active{
+  background-color: #E9EFFF;
+  padding: 5px 10px;
+  color: #1D4ED8;
+  border-radius: 5px;
+}
