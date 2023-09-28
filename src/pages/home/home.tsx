@@ -64,6 +64,9 @@ const Home = () => {
       checked: false,
     },
   ]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [filteredCandidates, setfilteredCandidates] =
+    useState<CandidatesProps>(candidates);
 
   const onChange = (e: CheckboxChangeEvent) => {
     const newData = candidates.map((candidate: CandidateProps) => ({
@@ -72,6 +75,31 @@ const Home = () => {
     }));
     setCandidates([...newData]);
   };
+
+  const onSearchChange = (e: any) => {
+    let searchQuery = e.target.value;
+    if (searchQuery) {
+      const result = candidates.filter((candidate) => {
+        const { name, location, degree, tags, skills } = candidate;
+
+        return (
+          name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          degree.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          tags.some((tag) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase())
+          ) ||
+          skills.some((skill) =>
+            skill.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        );
+      });
+      setCandidates(result);
+    } else {
+      setCandidates(filteredCandidates);
+    }
+  };
+
   return (
     <div style={{ position: "relative" }}>
       <div className="d-flex">
@@ -81,7 +109,7 @@ const Home = () => {
           <div className="px-4">
             <div className="row d-flex">
               <div className="col-md-4">
-                <Searchbar />
+                <Searchbar onSearchChange={onSearchChange} />
                 <div className="filterContainer">
                   <div className="d-flex justify-content-between filterRow">
                     <span className="title">Filters</span>
