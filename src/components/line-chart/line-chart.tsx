@@ -1,15 +1,13 @@
-import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
   PointElement,
   LineElement,
-  Title,
   Tooltip,
-  Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
+import { GraphData } from "../../types/types";
 
 ChartJS.register(
   CategoryScale,
@@ -19,10 +17,21 @@ ChartJS.register(
   Tooltip
 );
 
-const LineChart = ({ data }: any) => {
+type lineChartProps = {
+  data: GraphData;
+};
+
+const LineChart = ({ data }: lineChartProps) => {
   return (
     <Line
       options={{
+        scales: {
+          y: {
+            max: Math.max(750),
+            min: Math.max(250),
+            ticks: { stepSize: 250 },
+          },
+        },
         responsive: true,
         plugins: {
           legend: {
@@ -34,6 +43,7 @@ const LineChart = ({ data }: any) => {
           },
         },
       }}
+      style={{ width: "100%", height: "100%" }}
       data={data}
       updateMode="active"
     />
