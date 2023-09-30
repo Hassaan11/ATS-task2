@@ -2,7 +2,7 @@ import { Checkbox } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 
 import { ReactComponent as Icon } from "../../assets/svgs/avatar.svg";
-import { CandidateComponetProps } from "../../types/types";
+import { CandidateComponentProps } from "../../types/types";
 
 import "./candidate.css";
 
@@ -11,7 +11,7 @@ const Candidate = ({
   setCandidates,
   candidates,
   index,
-}: CandidateComponetProps) => {
+}: CandidateComponentProps) => {
   const onChange = (e: CheckboxChangeEvent) => {
     const newData = [...candidates];
     newData[index].checked = e.target.checked;

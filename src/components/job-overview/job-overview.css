@@ -1,0 +1,123 @@
+.job-overview .title {
+  font-size: 16px;
+  color: #0b0b0b;
+  font-weight: 600;
+}
+.job-overview .c1 {
+  width: 55%;
+}
+.job-overview .c2 {
+  width: 45%;
+  margin: 0 20px;
+}
+.job-overview2 {
+  display: flex;
+  flex-direction: row;
+}
+.job-overview .box {
+  flex-grow: 1;
+  background-color: white;
+  margin-right: 20px;
+  border-radius: 15px;
+}
+
+.job-overview .box:last-child {
+  margin-right: 0 !important;
+}
+
+.job-overview .box h5 {
+  font-size: 15px;
+  color: #0b0b0b;
+}
+.job-overview .box h6 {
+  font-size: 20px;
+  color: #0b0b0b;
+  margin: 10px 0;
+}
+.job-overview .box .prevPeriod {
+  font-size: 12px;
+  color: #0b0b0b;
+}
+.job-overview .box .percentage {
+  font-size: 10px;
+  background-color: #f0f6ff;
+  color: #0b0b0b;
+  margin-left: 10px;
+  padding: 5px 7px;
+  border-radius: 10px;
+}
+.job-overview .graph-header {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+.graph-header .right span {
+  font-size: 12px;
+  color: #0b0b0b;
+}
+
+.graph-header .right span:first-child {
+  margin-right: 10px;
+}
+.job-overview .progresstext span {
+  font-size: 8px;
+  color: #c2c2c2;
+}
+.job-overview .c2 .first {
+  background-color: white;
+  border-radius: 15px;
+  flex-grow: 1;
+}
+.job-overview :where(.css-dev-only-do-not-override-1ck3jst).ant-progress-line {
+  margin-bottom: 0 !important;
+}
+
+.job-overview .c2 .first h5 {
+  font-size: 15px;
+  color: #0b0b0b;
+}
+
+.job-overview .c2 .first h6 {
+  font-size: 20px;
+  color: #0b0b0b;
+}
+.job-overview .heading span {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.job-overview .c2 .first .details span {
+  font-size: 12px;
+}
+
+.job-overview .c2 .first .details .right span {
+  font-size: 12px;
+  text-align: end;
+}
+
+.job-overview .boxDiv1 {
+  width: 50%;
+}
+
+.boxDiv1:last-child {
+  margin-left: 20px !important;
+}
+
+canvas {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+@media screen and (max-width: 990px) {
+  .job-overview .c1 {
+    width: 100%;
+  }
+  .job-overview .c2 {
+    width: 100%;
+    margin: 20px 0;
+  }
+  .job-overview2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
