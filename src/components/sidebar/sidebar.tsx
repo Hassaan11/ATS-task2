@@ -11,7 +11,6 @@ import {
   LeftOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import "./sidebar.css";
@@ -20,7 +19,7 @@ const Sidebar = () => {
   const location = useLocation();
 
   return (
-    <div className="d-flex flex-column justify-content-between sidebar bg-white">
+    <div className="d-flex flex-column justify-content-between bg-white sidebar">
       <div className="d-flex flex-column align-items-center">
         <MenuOutlined className="icon" />
         <Link to="/">
