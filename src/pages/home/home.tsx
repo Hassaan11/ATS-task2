@@ -11,60 +11,13 @@ import { CandidateProps, CandidatesProps } from "../../types/types";
 
 import "./home.css";
 import { FileOutlined, PlayCircleOutlined } from "@ant-design/icons";
+import { candidate } from "../../constants";
 
 const Home = () => {
   const [selected, setSelected] = useState([]);
-  const [candidates, setCandidates] = useState<CandidatesProps>([
-    {
-      name: "Aaliyah Sanderson",
-      location: "Riyadh, Saudi Arabia",
-      degree: "Bachelor - Cambridge University (2023 - 2023)",
-      tags: ["#top_candidate", "#top_candidate"],
-      skills: ["New York", "Marketing", "London"],
-      checked: false,
-    },
-    {
-      name: "John Doe",
-      location: "Bostom, USA",
-      degree: "Bachelor - MIT (2023 - 2023)",
-      tags: ["#top_candidate", "#top_candidate"],
-      skills: ["New York", "Marketing", "London"],
-      checked: false,
-    },
-    {
-      name: "Thomas Matt",
-      location: "Edinburgh, UK",
-      degree: "Bachelor - Harvard University (2023 - 2023)",
-      tags: ["#top_candidate", "#top_candidate"],
-      skills: ["New York", "Marketing", "London"],
-      checked: false,
-    },
-    {
-      name: "Kamilia Smith",
-      location: "London, UK",
-      degree: "Bachelor - Boston University (2023 - 2023)",
-      tags: ["#top_candidate", "#top_candidate"],
-      skills: ["New York", "Marketing", "London"],
-      checked: false,
-    },
-    {
-      name: "Roy Jade",
-      location: "Cambridge,  UK",
-      degree: "Bachelor - Yale (2023 - 2023)",
-      tags: ["#top_candidate", "#top_candidate"],
-      skills: ["New York", "Marketing", "London"],
-      checked: false,
-    },
-    {
-      name: "Ahmed Salman",
-      location: "New York, USA",
-      degree: "Bachelor - Cambridge University (2023 - 2023)",
-      tags: ["#top_candidate", "#top_candidate"],
-      skills: ["New York", "Marketing", "London"],
-      checked: false,
-    },
-  ]);
+  const [candidates, setCandidates] = useState<CandidatesProps>(candidate);
   const [check, setCheck] = useState(false);
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [filteredCandidates, setfilteredCandidates] =
     useState<CandidatesProps>(candidates);
@@ -82,7 +35,6 @@ const Home = () => {
     setCheck(false);
     let searchQuery = e.target.value;
     if (searchQuery) {
-      console.log("inside", candidates);
       const result = filteredCandidates.filter((candidate) => {
         const { name, location, degree, tags, skills } = candidate;
 
