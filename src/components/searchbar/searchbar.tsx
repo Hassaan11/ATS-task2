@@ -8,6 +8,7 @@ const Searchbar = ({ onSearchChange }: any) => {
     <div className="inputdiv">
       <Input
         className="w-100"
+        style={{ fontSize: "14px" }}
         size="large"
         placeholder="Serach by name, edu, exp or #tag"
         onChange={onSearchChange}

@@ -8,12 +8,6 @@
   top: 0;
 }
 
-@media screen and (max-width: 550px) {
-  .sidebar {
-    display: none !important;
-  }
-}
-
 .sidebar .icon {
   font-size: 20px;
   margin-top: 30px;
@@ -24,9 +18,9 @@
   margin-bottom: 30px;
 }
 
-.active{
-  background-color: #E9EFFF;
+.active {
+  background-color: #e9efff;
   padding: 5px 10px;
-  color: #1D4ED8;
+  color: #1d4ed8;
   border-radius: 5px;
 }

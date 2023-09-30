@@ -3,6 +3,8 @@ import { DatePicker, DatePickerProps } from "antd";
 import dayjs from "dayjs";
 import moment from "moment";
 
+import { NavbarProps } from "../../types/types";
+
 import "./report-navbar.css";
 
 const ReportNavbar = ({
@@ -10,7 +12,8 @@ const ReportNavbar = ({
   setEndDate,
   startDate,
   endDate,
-}: any) => {
+  heading,
+}: NavbarProps) => {
   const { RangePicker } = DatePicker;
 
   const customFormat: DatePickerProps["format"] = (value: any) =>
@@ -18,7 +21,7 @@ const ReportNavbar = ({
 
   return (
     <div className="d-flex justify-content-between align-items-center flex-wrap p-4 report-navbar">
-      <h3 className="title">Opportunity Overview</h3>
+      <h3 className="title">{heading}</h3>
       <div className="d-flex align-items-center">
         <h5>
           London Internship Program{" "}
@@ -31,11 +34,11 @@ const ReportNavbar = ({
               border: "none",
               borderRadius: "20px",
             }}
-            defaultValue={[dayjs("01/01/2023"), dayjs("07/31/2023")]}
+            defaultValue={[dayjs(startDate), dayjs(endDate)]}
             format={customFormat}
             onChange={(e: any) => {
-              setStartDate(e[0]?.$d);
-              setEndDate(e[1]?.$d);
+              setStartDate(e?.[0]?.$d);
+              setEndDate(e?.[1]?.$d);
             }}
           />
         </div>

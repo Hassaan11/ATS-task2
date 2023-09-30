@@ -1,3 +1,13 @@
-a{
-  color: #0B0B0B;
+a {
+  color: #0b0b0b;
+}
+
+.ant-table-wrapper .css-dev-only-do-not-override-1ck3jst {
+  overflow-x: scroll !important;
+}
+
+@media screen and (max-width: 550px) {
+  .sidebar {
+    display: none !important;
+  }
 }
